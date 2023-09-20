@@ -36,4 +36,5 @@ Posant aquesta IP 142.250.184.14 s'obre google.
 
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/1bd259ad-368e-4c5f-8d38-4e24d9c62423)
 
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/78f937b1-2d03-4ba4-9bd5-90f58148d7b1)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/fe375747-d39f-4a3c-a72d-81276d236ce4)
+
