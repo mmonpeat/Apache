@@ -2,8 +2,11 @@
 
 ##EX_01
 He installat Ubuntu.
+
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6ec3ef62-29b2-4ef4-89da-371e49d8cb72)
+
 He installat apache2, amb la comanda: sudo apt install apache2
+
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/baabb55c-ff78-44ab-8734-f6c086d67739)
 
 ##EX_02
