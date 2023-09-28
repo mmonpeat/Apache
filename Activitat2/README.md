@@ -64,12 +64,9 @@ LLavors guardem l'arxiu i tornem a reinicia el servidor amb la comanda sudo serv
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/1007a814-9056-4ce2-8f78-5b4596ad9f2d)
 
 Aqui podem veure la IP de la meva maquina.
-
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/7e4cec45-2b50-4956-8d4c-3323574b5ab7)
-
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/5e9b6cf3-eec3-423a-a25a-a511e5d977b4)
 
-* No ha funcionat obrir-ho al navegador, llavors mirem l'status de apache2.
+PD: No ha funcionat obrir-ho al navegador, llavors mirem l'status de apache2.
 
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f8af18f1-e1a1-47ee-8412-bac4a0030c94)
 
@@ -118,7 +115,6 @@ Entrem al port amb https i el port 443. Es conecta encara que posa que és de ri
 ## EX_05
 1. L'arxiu principal de configuració de Apache2 es troba en la següent ubicació:
 /etc/apache2/apache2.conf
-
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/05ccb84f-1d88-4529-b5a7-2726d49bf95b)
 
 2. Aquest arxiu conté configuracions globals per al servidor Apache2 i pot incloure configuracions generals que s'apliquen a tots els llocs allotjats en el servidor.
@@ -131,22 +127,58 @@ Codi principal:
 3. Directoris sites-available i sites-enabled: Aquests directoris s'utilitzen per a gestionar la configuració dels llocs web virtuals en Apache2.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/78653b53-5118-4dd2-a7c7-3e6d9f00b955)
 
-/etc/apache2/sites-available/: En aquest directori, es troben els arxius de configuració dels llocs web virtuals disponibles. Cada arxiu representa una configuració de lloc web. Aquests arxius estan disponibles però no activats per defecte.
+* /etc/apache2/sites-available/: En aquest directori, es troben els arxius de configuració dels llocs web virtuals disponibles. Cada arxiu representa una configuració de lloc web. Aquests arxius estan disponibles però no activats per defecte.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/4358e2b2-7070-4bb3-bf9a-086992a32c20)
 
-/etc/apache2/sites-enabled/: En aquest directori, es creen enllaços simbòlics (symlinks) als arxius de configuració dels llocs web virtuals que desitges habilitar. Quan habilites un lloc, Apache2 llegeix la seva configuració des de sites-available a través dels enllaços en sites-enabled.
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f5082e0b-3e0f-4cb8-98af-9cdff320ed48)
+* /etc/apache2/sites-enabled/: En aquest directori, es creen enllaços simbòlics (symlinks) als arxius de configuració dels llocs web virtuals que desitges habilitar. Quan habilites un lloc, Apache2 llegeix la seva configuració des de sites-available a través dels enllaços en sites-enabled.
+  ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f5082e0b-3e0f-4cb8-98af-9cdff320ed48)
 
 4.  Directoris mods-available i mods-enabled: Aquests directoris s'utilitzen per a gestionar els mòduls de Apache2.
-
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/9fe6b89c-986f-4e68-a437-702a0739b15a)
 
-/etc/apache2/mods-available/: En aquest directori, es troben els arxius de configuració dels mòduls disponibles per a Apache2. Cada arxiu representa la configuració d'un mòdul específic.
+* /etc/apache2/mods-available/: En aquest directori, es troben els arxius de configuració dels mòduls disponibles per a Apache2. Cada arxiu representa la configuració d'un mòdul específic.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/5a7cbb75-2e7b-463f-95f2-d429be39fe3a)
 
-/etc/apache2/mods-enabled/: Igual que en el cas de sites-enabled, aquest directori conté enllaços simbòlics als arxius de configuració dels mòduls que desitges habilitar. Habilitar un mòdul significa crear un enllaç simbòlic des de mods-available a mods-enabled.
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/fbb65c2b-8bfb-4cbb-b232-18688b740ece)
+* /etc/apache2/mods-enabled/: Igual que en el cas de sites-enabled, aquest directori conté enllaços simbòlics als arxius de configuració dels mòduls que desitges habilitar. Habilitar un mòdul significa crear un enllaç simbòlic des de mods-available a mods-enabled.![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/fbb65c2b-8bfb-4cbb-b232-18688b740ece)
 
 En resum, sites-available i sites-enabled s'utilitzen per a administrar la configuració de llocs web virtuals, mentre que mods-available i mods-enabled s'utilitzen per a administrar els mòduls de Apache2. L'arxiu apache2.conf conté configuracions globals per al servidor. Aquests components permeten una administració flexible i modular de la configuració de Apache2.
 
 ## EX_06
+Anem al directori /usr/bin, per això cal tirar directoris enrrera fins /
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/0849fdfd-5337-4126-bb48-45714e47f633)
+
+### Control de servei
+Per a controlar el servei Apache2 en la majoria de les distribucions de Linux, pots utilitzar el comando systemctl, que és part del sistema d'inici systemd. A continuació, es descriuen els comandos comuns per a controlar Apache2:
+
+Iniciar Apache2:
+sudo systemctl start apache2
+Aquest comando inicia el servei Apache2. El servidor web començarà a escoltar i processar sol·licituds.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f7861d3b-7033-4366-ab13-e65206e23996)
+
+Detenir Apache2:
+sudo systemctl stop apache2
+Aquest comando deté el servei Apache2. El servidor web deixarà d'escoltar i processar sol·licituds.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/7dff377d-1b98-4afd-ae23-8d7fe7181532)
+
+Recarregar la configuració de Apache2:
+sudo systemctl reload apache2
+Aquest comando recarrega la configuració de Apache2 sense detenir el servidor. És útil després de fer canvis en la configuració per a aplicar-los sense reiniciar el servidor.
+Cal fer start per fer reload.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/37c0e7ee-fa99-49f5-a908-cc159bee4755)
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/13b8c271-19ae-4186-a61f-fecb63ace64a)
+
+Reiniciar Apache2:
+sudo systemctl restart apache2
+Aquest comando deté i després reinicia el servei Apache2. S'utilitza per a aplicar canvis importants en la configuració o reiniciar el servidor després d'actualitzar Apatxe o els seus mòduls.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/d89c02ba-8448-42e1-94a9-35af49c94774)
+
+### Comprovació de sintaxi de configuració:
+
+Per a verificar la sintaxi de la configuració de Apache2 abans de reiniciar el servidor, pots usar el comando apache2ctl. El següent comando verificarà la sintaxi de la configuració:
+sudo apache2ctl configtest
+Aquest comando revisarà la configuració i t'informarà si hi ha errors en la sintaxi. Si la configuració és vàlida, veuràs un missatge que indica "Syntax OK". Això és útil per a detectar problemes de configuració abans de reiniciar Apache2, evitant que el servidor es detingui a causa d'errors de configuració.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/85289c5a-5945-4411-9bd7-da219b6d7fb3)
+
+
+
