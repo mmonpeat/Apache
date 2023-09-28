@@ -180,5 +180,46 @@ sudo apache2ctl configtest
 Aquest comando revisarà la configuració i t'informarà si hi ha errors en la sintaxi. Si la configuració és vàlida, veuràs un missatge que indica "Syntax OK". Això és útil per a detectar problemes de configuració abans de reiniciar Apache2, evitant que el servidor es detingui a causa d'errors de configuració.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/85289c5a-5945-4411-9bd7-da219b6d7fb3)
 
+## EX_07
 
+### Ubicació principal dels arxius de monitoratge:
+Els arxius de registre (logs) principals de Apache2 es troben en el directori /var/log/apache2/. Els arxius de registre més importants són error.log i access.log.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/fbde4858-3800-4e8c-8bb9-59b435524304)
 
+error.log: Aquest arxiu registra errors i problemes trobats pel servidor Apache2. Això pot incloure errors en la configuració, errors de *scripts *CGI, problemes amb sol·licituds de clients i més.
+
+access.log: Aquest arxiu registra totes les sol·licituds entrants al servidor Apache2, incloent-hi informació sobre les adreces IP dels clients, les pàgines sol·licitades, el codi de resposta HTTP i altres detalls d'accés.
+
+### Rotació de logs en Apache2:
+
+La rotació de logs és important per a evitar que els arxius de registre ocupin massa espai en disc i per a mantenir un historial ordenat d'esdeveniments. En sistemes Linux, generalment s'utilitza el programa logrotate per a la rotació de logs. Aquest programa permet comprimir i arxivar registres antics, a més de configurar quan i com s'han de girar els logs.
+
+En Apache2, la configuració de rotació de logs es troba en arxius específics dins del directori /etc/logrotate.d/. Pots trobar un arxiu de configuració per a Apache2, generalment dit apache2, que defineix com s'han de girar els logs de Apache2. El contingut de l'arxiu sol ser similar al següent:
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/e24ead3a-5731-4b2a-b0ce-926b44a72f8a)
+
+Aquesta configuració diu que els arxius de registre en /var/log/apache2/ es giraran setmanalment (weekly) i es conservaran 52 còpies anteriors (rotate 52). Els *logs es comprimiran (compress) i el servidor Apache2 es recarregarà després de la rotació perquè comenci a escriure en nous arxius de registre.
+
+### Monitoratge en temps real:
+
+Pots utilitzar l'eina tail -f per a monitorar en temps real els accessos i errors en els arxius de registre de Apache2. Per exemple:
+
+tail -f /var/log/apache2/access.log
+tail -f /var/log/apache2/error.log
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/e78c5804-d704-403e-8ed1-eed706aa9cb6)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/32ce1b88-15ba-4180-8200-c6a1d0862d81)
+
+Això mostrarà les últimes entrades en els arxius i continuarà mostrant noves entrades a mesura que es generin.
+
+### Anàlisi de logs:
+
+Per a analitzar i obtenir estadístiques visuals a partir dels logs de Apache2, pots utilitzar eines com GoAccess. Per a instal·lar GoAccess, pots utilitzar el gestor de paquets del teu sistema (per exemple, apt-get, yum, brew, etc.). Una vegada instal·lat, pots executar-ho en l'arxiu de registre d'accés de Apache2 de la següent manera:
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/0f03c9c5-29f1-4091-a36d-b81aa3bfbc53)
+
+He clicat d per tenir el format d'hora.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/01e0ca4b-d9f6-4bde-9ff4-cc11f7561d21)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/7b926102-4b9b-438e-9f0c-4d30257fdea3)
+
+Aquí es poden veure estadistiques.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/767145a7-4544-49fe-8297-300032bb70ae)
