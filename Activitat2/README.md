@@ -115,4 +115,38 @@ Entrem al port amb https i el port 443. Es conecta encara que posa que és de ri
 
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/d3b560f0-44c3-4572-b5ff-d26ce8aec27d)
 
+## EX_05
+1. L'arxiu principal de configuració de Apache2 es troba en la següent ubicació:
+/etc/apache2/apache2.conf
 
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/05ccb84f-1d88-4529-b5a7-2726d49bf95b)
+
+2. Aquest arxiu conté configuracions globals per al servidor Apache2 i pot incloure configuracions generals que s'apliquen a tots els llocs allotjats en el servidor.
+Codi principal:
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/b3f1250a-d453-4ffe-9ff1-a8c206130171)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/742209ee-e7c1-42e9-a463-ebdffb41b874)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6104066c-512b-483d-b603-5abea87346f4)
+
+
+3. Directoris sites-available i sites-enabled: Aquests directoris s'utilitzen per a gestionar la configuració dels llocs web virtuals en Apache2.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/78653b53-5118-4dd2-a7c7-3e6d9f00b955)
+
+/etc/apache2/sites-available/: En aquest directori, es troben els arxius de configuració dels llocs web virtuals disponibles. Cada arxiu representa una configuració de lloc web. Aquests arxius estan disponibles però no activats per defecte.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/4358e2b2-7070-4bb3-bf9a-086992a32c20)
+
+/etc/apache2/sites-enabled/: En aquest directori, es creen enllaços simbòlics (symlinks) als arxius de configuració dels llocs web virtuals que desitges habilitar. Quan habilites un lloc, Apache2 llegeix la seva configuració des de sites-available a través dels enllaços en sites-enabled.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f5082e0b-3e0f-4cb8-98af-9cdff320ed48)
+
+4.  Directoris mods-available i mods-enabled: Aquests directoris s'utilitzen per a gestionar els mòduls de Apache2.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/9fe6b89c-986f-4e68-a437-702a0739b15a)
+
+/etc/apache2/mods-available/: En aquest directori, es troben els arxius de configuració dels mòduls disponibles per a Apache2. Cada arxiu representa la configuració d'un mòdul específic.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/5a7cbb75-2e7b-463f-95f2-d429be39fe3a)
+
+/etc/apache2/mods-enabled/: Igual que en el cas de sites-enabled, aquest directori conté enllaços simbòlics als arxius de configuració dels mòduls que desitges habilitar. Habilitar un mòdul significa crear un enllaç simbòlic des de mods-available a mods-enabled.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/fbb65c2b-8bfb-4cbb-b232-18688b740ece)
+
+En resum, sites-available i sites-enabled s'utilitzen per a administrar la configuració de llocs web virtuals, mentre que mods-available i mods-enabled s'utilitzen per a administrar els mòduls de Apache2. L'arxiu apache2.conf conté configuracions globals per al servidor. Aquests components permeten una administració flexible i modular de la configuració de Apache2.
+
+## EX_06
