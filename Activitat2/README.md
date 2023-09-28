@@ -271,3 +271,103 @@ Alguns dels codis de format comuns utilitzats en el format de log inclouen:
 
 Aquí es poden veure estadistiques.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/767145a7-4544-49fe-8297-300032bb70ae)
+
+## EX_08
+
+1. **Què és un Firewall?**
+Un firewall és una mesura de seguretat informàtica que s'utilitza per protegir una xarxa d'ordinadors o un sistema informàtic. La seva principal funció és controlar i filtrar el trànsit de dades que entra i surt d'una xarxa o dispositiu, amb l'objectiu de prevenir amenaces i atacs cibernètics no autoritzats. Els firewalls poden ser hardware o software i actuen com una barrera que permet o bloqueja el pas de dades en funció de regles predefinides.
+
+2. **Per a què serveix un Firewall?**
+Un firewall serveix per:
+
+   - Protegir contra atacs cibernètics: Evita que persones no autoritzades accedeixin a una xarxa o sistema.
+   - Controlar el trànsit de xarxa: Permet establir polítiques de seguretat, com permetre o bloquejar certs tipus de trànsit.
+   - Filtrar malware i virus: Detecta i bloqueja el trànsit maliciós que pot danyar sistemes.
+   - Registrar esdeveniments de seguretat: Ajuda a identificar intents d'intrusió o activitats sospitoses.
+
+3. **Per què és necessari un Firewall?**
+Un firewall és necessari perquè Internet està ple d'amenaces cibernètiques, com ara hackers, virus, malware i atacs de tot tipus. Sense un firewall, els sistemes i xarxes estarien exposats a aquests perills. El firewall actua com una primera línia de defensa, filtrant el trànsit no desitjat i protegint la privadesa i la integritat de les dades.
+
+**Instal·lació i configuració d'un Firewall per permetre trànsit HTTP i HTTPS i bloquejar la resta dels ports**:
+
+La instal·lació i configuració d'un firewall varia segons el sistema operatiu que estiguis utilitzant. A continuació, proporcionaré un exemple general utilitzant la comanda `ufw` en una màquina Ubuntu:
+
+1. Instal·la `ufw` si encara no està instal·lat:
+   ```
+   sudo apt-get install ufw
+   ```
+
+2. Habilita el trànsit HTTP (port 80) i HTTPS (port 443):
+   ```
+   sudo ufw allow 80/tcp
+   sudo ufw allow 443/tcp
+   ```
+
+3. Bloqueja tot el trànsit entrant i sortint per defecte:
+   ```
+   sudo ufw default deny incoming
+   sudo ufw default deny outgoing
+   ```
+
+4. Activa el firewall:
+   ```
+   sudo ufw enable
+   ```
+
+5. Comprova l'estat del firewall:
+   ```
+   sudo ufw status
+   ```
+
+El firewall ara permetrà només el trànsit HTTP i HTTPS i bloquejarà la resta dels ports.
+
+## EX_09
+
+**Explicació de les parts d'una URL**:
+
+Una URL (Uniform Resource Locator) consta de les següents parts:
+
+- **Esquema**: Indica el protocol utilitzat, com "http://" o "https://".
+- **Nom de domini**: L'adreça web del recurs al qual s'accedeix, com "www.exemple.com".
+- **Port**: Opcional, indica el número de port utilitzat per a la connexió, per exemple, ":80" per a HTTP o ":443" per a HTTPS.
+- **Ruta**: La ubicació específica del recurs al servidor, com "/pagina/exemple.html".
+- **Query (consulta)**: Opcional, conté paràmetres addicionals que poden ser processats per la pàgina web, com "?id=123".
+- **Fragment**: Opcional, identifica una secció específica d'una pàgina web, com "#seccio".
+
+
+## EX_10
+
+**Explicació del funcionament del protocol HTTP**:
+
+HTTP (Hypertext Transfer Protocol) és el protocol utilitzat per a la transferència de dades a la World Wide Web. Funciona de la següent manera:
+
+Quan un client (com ara un navegador web) vol accedir a una pàgina web, envia una sol·licitud HTTP a un servidor web. La sol·licitud inclou el mètode (GET, POST, etc.), la URL del recurs i altres capçaleres. El servidor web rep la sol·licitud, processa la petició i envia una resposta HTTP al client. Aquesta resposta inclou un codi d'estat (com ara 200 per èxit o 404 per recurs no trobat) i les dades sol·licitades (com ara una pàgina HTML).
+
+HTTP és un protocol sense estat, la qual cosa significa que cada sol·licitud es processa de forma independent sense memòria de sol·licituds anteriors. A més, HTTP és un protocol basat en text, la qual cosa facilita la lectura i la depuració de les comunicacions entre el client i el servidor.
+
+
+## EX_11
+
+**Què és un fitxer .htaccess i com s'utilitza?**:
+
+Un fitxer .htaccess és un fitxer de configuració utilitzat en servidors web basats en Apache. Permet controlar la configuració i el comportament del servidor web per a directoris específics sense necessitat d'editar la configuració global del servidor.
+
+Exemple d'ús per reescriure URL:
+```htaccess
+RewriteEngine On
+RewriteRule ^pagina/([^/]+)/?$ pagina.php?id=$1 [L]
+```
+
+Aquest codi redirigirà una URL com "http://www.exemple.com/pagina/123" a "http://www.exemple.com/pagina.php?id=123", amagant la part de la consulta.
+
+
+
+Exemple d'ús per restringir l'accés:
+```htaccess
+AuthType Basic
+AuthName "Àrea restringida"
+AuthUserFile /ruta/al/arxiu/.htpasswd
+Require valid-user
+```
+
+Aquest codi protegirà una carpeta amb autenticació bàsica i requerirà que els usuaris introdueixin un nom d'usuari i una contrasenya emmagatzemats en un fitxer .htpasswd per accedir als recursos d'aquella carpeta.
