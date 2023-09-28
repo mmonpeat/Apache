@@ -78,4 +78,41 @@ He resolt el problema i aqui podem veure en el navegador amb http://localhost:44
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/5e0efd8e-d51f-4a09-a0da-8f2d32a6c963)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/3c2aabf4-364b-4321-92a5-8fbbd784d3b3)
 
+## EX_04
+
+Si només tens dos arxius de configuració en /etc/apache2/sites-available, 000-default.conf i default-ssl.conf, això significa que estàs utilitzant la configuració predeterminada d'Apatxe per al lloc web principal i SSL. Aquí et mostro com habilitar SSL i configurar el teu lloc perquè funcioni amb HTTPS en el port 443 utilitzant aquests arxius. Hem canviat el port, que hem canviat en l'exercici anterior a 80, com abans.
+
+PD: He utilitzat el 443 per que m'ho ha dit el profesor encara que en el exercici posa 4444. Tot i això caldria canviar els arxius ServerAdmin, DocumentRoot, ErrorLog, CustomLog, ports.conf i defoult-ssl.conf.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f844ba81-b5ee-49a2-9bac-f13dc98ecbdf)
+
+Abans de tot hem de canviar els permisos amb sudo chmod 755 /etc/apache2/sites-available/defoult-ssl.conf
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/600132c5-4de7-45db-b913-b3a172770776)
+
+Executa el següent comando per a habilitar el mòdul SSL en Apatxe:
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/bdba50ed-9247-4a16-b8bc-8e08617d9543)
+
+Comprovem que els arxius estan en la ruta /etc/ssl/certs i /etc/ssl/private, en aquesta no puc entrar.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/36c70806-532b-405a-af94-6e3e93fe3a1c)
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/4032be71-5188-4df7-967b-f4089ea3e5aa)
+
+L'arxiu default-ssl.conf ha d'estar amb les rutes correctes, les seguents.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/943dad2a-2ee3-4e56-9821-94c4ec6be14f)
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ede229b3-60f4-43a6-97d0-9d3df2d62914)
+
+Habilitem el lloc ssl i reiniciem apache2.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/3ca321da-70ce-400d-9cf9-f1e9b73472ac)
+
+Entrem al port amb https i el port 443. Es conecta encara que posa que és de risc, ho acceptem i seguim.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/d021b32c-1f8a-4cef-ad76-9ac0602e4682)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/92323b7f-c229-4542-b9b9-9b022302a64d)
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/d3b560f0-44c3-4572-b5ff-d26ce8aec27d)
+
 
