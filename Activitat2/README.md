@@ -221,5 +221,53 @@ He clicat d per tenir el format d'hora.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/01e0ca4b-d9f6-4bde-9ff4-cc11f7561d21)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/7b926102-4b9b-438e-9f0c-4d30257fdea3)
 
+
+#### Configuració del Format d'Hora en GoAccess
+
+Per personalitzar el format d'hora en GoAccess i mostrar-lo en un format específic, com ara el format de 12 hores amb AM/PM, podeu fer-ho utilitzant l'opció `--time-format` amb el seguent format: '%d/%b/%Y:%T %p'
+
+Això mostrarà la data i l'hora en el format "dia/mes/any:hora:minut:segon AM/PM".
+
+    %d: Dia del mes (01-31).
+    %b: Abreviatura del nom del mes (gen, feb, mar, etc.).
+    %Y: Any (quatre dígits).
+    %T: Hora en format HH:MM:SS.
+    %p: AM o PM.
+
+#### Configuració del Format d'Data en GoAccess
+
+Per personalitzar el format de data en GoAccess, podeu utilitzar l'opció `--date-format` amb el següent format: '%d/%b/%Y'
+
+Alguns dels codis de format comuns per a la data inclouen:
+
+    %d: Dia del mes (01-31).
+    %b: Abreviatura del nom del mes (gen, feb, mar, etc.).
+    %B: Nom complet del mes (gener, febrer, març, etc.).
+    %Y: Any (quatre dígits).
+
+#### Configuració del Format de Log en GoAccess
+
+El format de log predeterminat en GoAccess s'adapta al format de registre d'accés comú en servidors web, com ara Apache. No obstant això, GoAccess ofereix opcions per personalitzar el format de log segons les vostres necessitats.
+
+Podeu configurar l'opció --log-format amb el format COMBINED.
+
+ --log-format=COMBINED
+
+El format de log "COMBINED" és un format comúment utilitzat en els registres d'accés dels servidors web Apache. Inclou informació com la direcció IP del client, la data i l'hora, el mètode de sol·licitud HTTP, la URL sol·licitada, el codi de resposta HTTP, la mida de la resposta i més.
+
+GoAccess admet diversos formats de log predefinits, com "COMBINED," "COMMON," "W3C," i altres. També podeu crear el vostre propi format personalitzat utilitzant codis de format.
+
+Alguns dels codis de format comuns utilitzats en el format de log inclouen:
+
+    %h: Adreça IP del client.
+    %d: Data en format AAAA-MM-DD.
+    %t: Data i hora en format [dia/mes/any:hora:minut:segon zona horària].
+    %m: Mètode de sol·licitud HTTP (GET, POST, etc.).
+    %U: URL sol·licitada.
+    %s: Codi de resposta HTTP.
+    %b: Mida de la resposta en bytes.
+    %R: Referència (URL de la pàgina des de la qual es va fer la sol·licitud).
+    %u: Usuari (si s'utilitza autenticació).
+
 Aquí es poden veure estadistiques.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/767145a7-4544-49fe-8297-300032bb70ae)
