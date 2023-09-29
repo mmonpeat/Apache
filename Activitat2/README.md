@@ -296,28 +296,33 @@ La instal·lació i configuració d'un firewall varia segons el sistema operatiu
    ```
    sudo apt-get install ufw
    ```
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/e94a899b-e6b3-45d3-8f79-eeb64f7330e6)
 
 2. Habilita el trànsit HTTP (port 80) i HTTPS (port 443):
    ```
    sudo ufw allow 80/tcp
    sudo ufw allow 443/tcp
    ```
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/31e06a07-8f53-44a2-a9c2-6b6300f41e24)
 
 3. Bloqueja tot el trànsit entrant i sortint per defecte:
    ```
    sudo ufw default deny incoming
    sudo ufw default deny outgoing
    ```
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/0f389dc4-23d4-4266-bc96-24a4b759ae83)
 
 4. Activa el firewall:
    ```
    sudo ufw enable
    ```
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/bfc23f6a-1c15-4913-8c4b-ca7ed6ff3341)
 
 5. Comprova l'estat del firewall:
    ```
    sudo ufw status
    ```
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/76360479-9d40-4e4d-a320-5162fad4a392)
 
 El firewall ara permetrà només el trànsit HTTP i HTTPS i bloquejarà la resta dels ports.
 
@@ -352,22 +357,34 @@ HTTP és un protocol sense estat, la qual cosa significa que cada sol·licitud e
 
 Un fitxer .htaccess és un fitxer de configuració utilitzat en servidors web basats en Apache. Permet controlar la configuració i el comportament del servidor web per a directoris específics sense necessitat d'editar la configuració global del servidor.
 
+Com s'explica en aquesta web, en el cas de tenir permisos és millor editar els fitxers de configuració, que tenen la mateixa sintaxis.
+https://serverfault.com/questions/161473/htaccess-location 
+
+En la seguent imatge podem veure el que hem afegit, el el arxiu principal 000-default.conf
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/e5e6e5d0-5f31-478d-afd9-f2d6dd6ea615)
+expresdió regular==regex
+En redex ^ aquest caracter indica el principi del string i $ indica el final del string.
+
+Les pagines estan en aquest directori.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/1a04f701-70a1-4b2b-9d2b-2c6c06a81395)
+
+Si poso la IP 10.2.4.135 al host, podem veure que funciona.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/03a34702-d8fb-4e72-a8e8-0c195be6a03c)
+
+Aquí tenim la nova pàgina.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/feb4a949-85ff-4cd9-8694-8de301be48fb)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/30069f66-64e9-4cc2-81e0-750ba3c6795c)
+
+Aquestes dues lineas redirecionen al usuari a page.html
 Exemple d'ús per reescriure URL:
-```htaccess
-RewriteEngine On
-RewriteRule ^pagina/([^/]+)/?$ pagina.php?id=$1 [L]
 ```
+RewriteEngine On
+RewriteRule "^/page$" "^/page.html" [R]
+```
+La pàgina que he editat
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/3f457bd7-4b15-42cc-b669-e456eba9550a)
 
 Aquest codi redirigirà una URL com "http://www.exemple.com/pagina/123" a "http://www.exemple.com/pagina.php?id=123", amagant la part de la consulta.
-
-
-
-Exemple d'ús per restringir l'accés:
-```htaccess
-AuthType Basic
-AuthName "Àrea restringida"
-AuthUserFile /ruta/al/arxiu/.htpasswd
-Require valid-user
-```
-
-Aquest codi protegirà una carpeta amb autenticació bàsica i requerirà que els usuaris introdueixin un nom d'usuari i una contrasenya emmagatzemats en un fitxer .htpasswd per accedir als recursos d'aquella carpeta.
