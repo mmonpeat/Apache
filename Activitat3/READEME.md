@@ -48,3 +48,12 @@ ServerTokens Min
 ServerSignature On
 //imatge
 
+## EX 3
+
+Creem una carpeta en l'arrel del path.
+
+## EX 4
+
+## EX 5
+
+## EX 6
