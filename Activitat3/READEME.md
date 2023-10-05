@@ -25,11 +25,26 @@ en el teu navegador web utilitzant la URL http://direccioIP/server-info. Reempla
 
 ## EX 2
 
-Quan obres localhost, entra a index.html per defecte.
+Quan obres localhost, entra a index.html per defecte, llavors he canviat la pàgina que surt d'Ubuntu per aquesta.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/eadddaf4-d483-4faf-ae70-5c09885beed2)
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/10b80c90-29ac-41f3-97d7-6d62fa97cb1e)
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ab824ed0-7fe8-4de8-97ff-8c8c36756560)
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/22638131-5f66-4f17-8101-27d2d5448954)
 
+Hemposat l'arxiu index.html en la carpeta inc, llavors al fer http://localhost es veu aquesta imatge. Es pot veure que a baix surt Apache Server at localhost Port 80.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/10b80c90-29ac-41f3-97d7-6d62fa97cb1e)
+Entrem a security.conf i canviem les lineas ServerTokens i ServerSignature. Per acabar reiniciem Apache.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/22638131-5f66-4f17-8101-27d2d5448954)
+Per aconseguir que no es vegi el comentari canviem l'arxiu d'aquesta manera.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ab824ed0-7fe8-4de8-97ff-8c8c36756560)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/8d070471-8e73-49ce-abfe-dfa95bff248a)
+
+Per que és vegi la versió completa de Apache, inclossos detalls com el número de la versió i el sistema operatiu en las respostas HTTP, posem:
+
+ServerTokens Full
+
+ServerSignature On
+//imatge
+
+ServerTokens Min
+
+ServerSignature On
+//imatge
 
