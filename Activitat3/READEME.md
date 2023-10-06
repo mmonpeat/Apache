@@ -30,8 +30,10 @@ Quan obres localhost, entra a index.html per defecte, llavors he canviat la pàg
 
 Hemposat l'arxiu index.html en la carpeta inc, llavors al fer http://localhost es veu aquesta imatge. Es pot veure que a baix surt Apache Server at localhost Port 80.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/10b80c90-29ac-41f3-97d7-6d62fa97cb1e)
+
 Entrem a security.conf i canviem les lineas ServerTokens i ServerSignature. Per acabar reiniciem Apache.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/22638131-5f66-4f17-8101-27d2d5448954)
+
 Per aconseguir que no es vegi el comentari canviem l'arxiu d'aquesta manera.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ab824ed0-7fe8-4de8-97ff-8c8c36756560)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/8d070471-8e73-49ce-abfe-dfa95bff248a)
@@ -41,16 +43,37 @@ Per que és vegi la versió completa de Apache, inclossos detalls com el número
 ServerTokens Full
 
 ServerSignature On
-//imatge
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f673d286-72a8-4032-93d8-bc1d782053b9)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/55539f48-9f17-4ab5-af13-03e614b7944b)
+
 
 ServerTokens Min
 
 ServerSignature On
-//imatge
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/2f4f4c33-4f63-42b3-b16f-6d80199474d7)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/3cf258c4-9423-456b-8333-a974f4a648f8)
 
 ## EX 3
 
-Creem una carpeta en l'arrel del path.
+Creem les carpetes en l'arrel del path, amb sudo mkdir. (en /var/www/html) no en /
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/bca81598-cd25-4fdd-9678-15df613565c5)
+
+Per tenir permisos d'escritura(AllowOverrite) anem a /etc/apache2 entrem en l'arxiu apache2.conf i canviem el None per un All.
+Després amb l'arxiu .htaccess canviatem les Options.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/305b850b-237a-4bc7-bf92-0ef90937da4f)
+
+No posem res en el directori public
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ee6ae80b-ac8b-4a43-a9a9-dfa508ffc1b0)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/30e547b0-89d8-4213-a4d6-2f86b2b0c374)
+
+Encanvi en el directori private creem l'arxiu ocult htaccess.
+
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/366228b3-c35e-4bf0-b65c-9174a7b29c3c)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/48f1985a-a9e2-47a4-afd5-4fcf8f6b95fc)
 
 ## EX 4
 
