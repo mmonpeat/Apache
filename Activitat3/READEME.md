@@ -77,6 +77,40 @@ Encanvi en el directori private creem l'arxiu ocult htaccess.
 
 ## EX 4
 
+So si funciona, crec que es per que a l'activitat anterior encontes d'usat htacces vaig usar un mòdul.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ee6c22c6-1538-4cbf-a085-d9bb337df408)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/c9f7bfda-7386-4b03-b6b4-d85e8aab3254)
+
 ## EX 5
 
+Utilitzarem el tema que ens donen, encata que podriem fer-nos la nostra plantilla personalitzada.
+LLavors ens decaregem el repositori i movem el 'directory-listing' al directori root d'Apache, es a dir a /etc/apache2.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/8c9713c8-ebd7-4de7-87c4-238c5e26e266)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6eeaeaec-89d9-429b-92f1-71f049c542da)
+
+Copiem htaccess.txt al directori root del server, anomentant'l-ho .htaccess.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/7dbb77df-c4ee-4e94-bdd0-2045a4c54d6c)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f4ec1a1d-728d-4247-84d5-07540f244a87)
+
+Ha d'estar a la ruta /var/www/html. M'havia equivocat i ho he canviat.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/efe1d19e-b42a-465b-a37f-47db0aeb6819)
+
+
+Canviem {LISTING_DIRECTORY} per la localització(ruta) del directori directory-listing.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6f77bdb0-6bd6-4fc0-b13f-cba69f2ed40e)
+
+Canviem {LISTING_STYLE} per algún estil d'aquest: grid, table, grid-darkmode, table-darkmode, grid-automode, or table-automode.
+grid-automode i table-automode canviaran automàticament entre els temes clars i foscos segons els paràmetres del SO o del navegador de l'usuari.
+Ho he canviat tot a mà per qué no he pogut amb el sed :(
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/f10c36fc-ce85-406d-8dcc-58a63677985f)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/0133226e-beed-4c8b-9a8c-ee5e6fffb027)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/c550ec52-6060-4e59-9d77-fdb522ab0409)
+
+
+És canvia el estil, amb table-automode però no queda bonic, i el table-darkmode hem fa el mateix.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/dd9bc236-0ee2-424f-a6fb-465b21dd7821)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/ae27179c-3372-4349-aae5-b987631c14e8)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/54a96a8b-d31a-48ac-80e2-56f3a252dd09)
+
 ## EX 6
+
