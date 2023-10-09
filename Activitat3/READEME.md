@@ -124,7 +124,8 @@ Si anem al directori mi-tema-apache podem veure que s'ha fet la pagina correctam
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/5d6a7905-ef07-4df7-9d3e-d6e8fcf3d244)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/102a4656-d768-4d31-b7cc-9f3f7a4fcdf3)
 
-També funciona amb www.localhost.
+També funciona amb www.localhost
+
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6002de5d-7d03-4149-91a1-25149f65307b)
 
 
