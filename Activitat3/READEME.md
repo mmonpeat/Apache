@@ -113,4 +113,19 @@ Ho he canviat tot a mà per qué no he pogut amb el sed :(
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/54a96a8b-d31a-48ac-80e2-56f3a252dd09)
 
 ## EX 6
+He creat una carpeta que es diu mi-tema-apache, dins he creat un arxiu html i he posat aquest codi.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/e1767adb-92ac-414b-b0ec-c3c65ed6b577)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/0ab41fb2-cfff-455a-86ac-fa2f3bdaaeed)
+
+Aquest arxi, la part del codi senyalat ha d'estar així.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/75aef9bc-6275-47f3-8910-983b39170120)
+
+Si anem al directori mi-tema-apache podem veure que s'ha fet la pagina correctament.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/5d6a7905-ef07-4df7-9d3e-d6e8fcf3d244)
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/102a4656-d768-4d31-b7cc-9f3f7a4fcdf3)
+
+També funciona amb www.localhost.
+![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6002de5d-7d03-4149-91a1-25149f65307b)
+
+
 
