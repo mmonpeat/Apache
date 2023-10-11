@@ -87,6 +87,7 @@ Abans de tot hem de canviar els permisos amb sudo chmod 755 /etc/apache2/sites-a
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/600132c5-4de7-45db-b913-b3a172770776)
 
 Executa el següent comando per a habilitar el mòdul SSL en Apatxe:
+
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/bdba50ed-9247-4a16-b8bc-8e08617d9543)
 
 Comprovem que els arxius estan en la ruta /etc/ssl/certs i /etc/ssl/private, en aquesta no puc entrar.
@@ -115,16 +116,18 @@ Entrem al port amb https i el port 443. Es conecta encara que posa que és de ri
 ## EX_05
 1. L'arxiu principal de configuració de Apache2 es troba en la següent ubicació:
 /etc/apache2/apache2.conf
+
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/05ccb84f-1d88-4529-b5a7-2726d49bf95b)
 
-2. Aquest arxiu conté configuracions globals per al servidor Apache2 i pot incloure configuracions generals que s'apliquen a tots els llocs allotjats en el servidor.
+3. Aquest arxiu conté configuracions globals per al servidor Apache2 i pot incloure configuracions generals que s'apliquen a tots els llocs allotjats en el servidor.
 Codi principal:
+
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/b3f1250a-d453-4ffe-9ff1-a8c206130171)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/742209ee-e7c1-42e9-a463-ebdffb41b874)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/6104066c-512b-483d-b603-5abea87346f4)
 
 
-3. Directoris sites-available i sites-enabled: Aquests directoris s'utilitzen per a gestionar la configuració dels llocs web virtuals en Apache2.
+5. Directoris sites-available i sites-enabled: Aquests directoris s'utilitzen per a gestionar la configuració dels llocs web virtuals en Apache2.
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/78653b53-5118-4dd2-a7c7-3e6d9f00b955)
 
 * /etc/apache2/sites-available/: En aquest directori, es troben els arxius de configuració dels llocs web virtuals disponibles. Cada arxiu representa una configuració de lloc web. Aquests arxius estan disponibles però no activats per defecte.
