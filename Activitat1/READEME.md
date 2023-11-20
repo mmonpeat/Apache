@@ -23,8 +23,8 @@ El TCP i UDP a la capa de transport. El IP en la de internet.
 
 ## ex 05
 ## ¿Cuál es el significado de la siguiente respuesta de un servidor? 
-###HTTP/1.1 302 Found 
-###Location: http://www.example.com/test/index2.php
+### HTTP/1.1 302 Found
+### Location: http://www.example.com/test/index2.php
 Indica que una URL específica ha estat traslladada temporalment a una nova ubicació. Cada vegada que els visitants, els robots de Google o altres motors de cerca accedeixen a la URL original, 
 la redirecció 302 ofereix una resposta automàtica que indica una nova direcció.
 
