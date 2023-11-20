@@ -39,7 +39,7 @@ Reiniciem el servidor
 
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/caf5c675-3169-4804-a973-f9a5468aed14)
 
-Entrem al arxiu ports.conf i cnaviem la linea Listen 80 per 4444. 
+Entrem al arxiu ports.conf i canviem la linea Listen 80 per 4444. 
 
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/539cad47-432b-488f-93dd-98807da99fca)
 
