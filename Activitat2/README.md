@@ -33,7 +33,6 @@ He installat apache2, amb la comanda: sudo apt install apache2
 
 ## EX_03
 Primer hem de buscar l'arxiu on s'ha installat apache2
-![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/35c02bf3-6869-4061-a882-ffb3dfc64624)
 ![imatge](https://github.com/mmonpeat/Desplegament_Aplicacions_Web/assets/115364869/afe7bcae-4866-469c-a3ba-a080cb228efb)
 
 Reiniciem el servidor
